@@ -66,7 +66,7 @@ It serves as a realistic playground for understanding how production databases w
 
 1. **Clone the repository:**
 ```bash
-git clone https://github.com/hamz1exact/PySQL.git
+git clone https://github.com/R-Exact/PySQL.git
 cd PySQL
 ```
 
