@@ -369,7 +369,3 @@ REFRESH MATERIALIZED VIEW name;
 ```
 
 ---
-
-## Acknowledgments
-
-Built for educational purposes to demonstrate database internals and SQL parsing techniques. Inspired by production databases like PostgreSQL and SQLite.
