@@ -221,19 +221,6 @@ Beyond SQL queries, the shell supports special commands:
 
 ## Examples
 
-### Advanced Query with Subqueries
-```sql
--- Find users who registered above average age in their country
-SELECT username, email, age, country
-FROM users u1
-WHERE u1.age > (
-    SELECT AVG(u2.age)
-    FROM users u2 
-    WHERE u2.country = u1.country
-)
-ORDER BY country, age DESC;
-```
-
 ### Using CTEs (Common Table Expressions)
 ```sql
 WITH high_value_orders AS (
