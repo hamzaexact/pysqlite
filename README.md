@@ -1,4 +1,4 @@
-# PySQL
+# pySQLite
 
 **PySQL** is a comprehensive SQL database engine in Python with advanced features like CTEs, materialized views, subqueries, and constraint management. Built for learning database internals and query execution.
 
