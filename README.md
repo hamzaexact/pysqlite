@@ -4,17 +4,6 @@
 
 ---
 
-## Table of Contents
-- [Features](#features)
-- [Why This Project?](#why-this-project)
-- [Installation](#installation)
-- [Quick Start](#quick-start)
-- [Supported Features](#supported-features)
-- [Interactive Shell Commands](#interactive-shell-commands)
-- [Examples](#examples)
-- [Project Structure](#project-structure)
-
----
 
 ## Features
 
@@ -40,21 +29,6 @@
 - **Advanced Clauses**: GROUP BY, HAVING with complex expressions
 - **Table Operations**: ALTER TABLE for columns and constraints
 
----
-
-## Why This Project?
-
-PySQL was built to explore database internals and provide hands-on experience with:
-
-- SQL parsing and Abstract Syntax Tree (AST) construction
-- Query execution engines and condition evaluation
-- Schema management and type validation systems
-- Data persistence and caching mechanisms
-- Database constraint enforcement and conflict resolution
-
-It serves as a realistic playground for understanding how production databases work internally, without the complexity of a full RDBMS.
-
----
 
 ## Installation
 
@@ -279,68 +253,6 @@ SELECT customer_id FROM inactive_customers;
 ```
 
 ---
-
-## Project Structure
-
-```
-pysql/
-├── cli/                    # Interactive shell interface
-│   └── shell.py           # Enhanced shell with autocomplete
-├── engine/                 # SQL parsing engine
-│   ├── lexer.py           # Tokenization
-│   ├── parser.py          # SQL parser
-│   └── sql_ast.py         # Abstract Syntax Tree definitions
-├── exec/                   # Query execution
-│   ├── exec.py            # Main execution coordinator
-│   └── helpers.py         # Execution helper functions
-├── src/                    # Core SQL operations
-│   ├── select.py          # SELECT query implementation
-│   ├── insert.py          # INSERT query implementation
-│   ├── update.py          # UPDATE query implementation
-│   ├── delete.py          # DELETE query implementation
-│   ├── create.py          # CREATE operations
-│   ├── drop.py            # DROP operations
-│   └── constants.py       # SQL constants and keywords
-├── sql_types/              # SQL data types
-│   └── sql_types.py       # Type system implementation
-├── storage/                # Data persistence
-│   └── classes.py  
-    └── database.py 
-    └── table.py 
-    └── serialize.py 
-    └── deserialize.py 
-    └── reference.py 
-├── queries/                # Example SQL queries
-├── main.py                 # Main entry point
-├── errors.py               # Custom exception classes
-├── utilities.py            # Helper functions
-├── requirements.txt        # Python dependencies
-└── README.md              # This file
-```
-
----
-
-
-## Technical Details
-
-### Architecture
-- **Lexer**: Tokenizes SQL strings into meaningful symbols using regex patterns
-- **Parser**: Builds Abstract Syntax Trees from tokens using recursive descent parsing
-- **Executor**: Traverses AST and executes operations on in-memory data structures
-- **Storage**: Uses MessagePack for efficient binary serialization to disk
-
-### Persistence
-- Databases stored as `.su` files in user home directory (`~/.pysql/`)
-- Automatic caching of last used database
-- Type-safe serialization/deserialization of all SQL types
-- Supports concurrent reads (single writer)
-
-### Performance Considerations
-- In-memory operation for fast queries
-- Optimized aggregate function implementations
-- Efficient condition evaluation using Python's native operators
-- Materialized views for expensive query caching
-
 ### Supported SQL Syntax
 ```sql
 -- Data Definition Language (DDL)
